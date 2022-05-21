@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NueralNetrwork</string>
+<!--    <string name="app_name">NueralNetrwork</string>-->
     <string name="action_settings">Settings</string>
     <string name="app_name">Распознавание латинских букв</string>
     <string name="invalid_number_hidden">Число нейронов в скрытом слое должно быть от 26 до 500</string>

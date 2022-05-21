@@ -1,0 +1,5 @@
+C:\Users\alena\Downloads\Xamarin\NueralNetrwork\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
+C:\Users\alena\Downloads\Xamarin\NueralNetrwork\obj\Debug\110\googsvcsjson\values\goog_svcs_json.xml
+C:\Users\alena\Downloads\Xamarin\NueralNetrwork\obj\Debug\110\build.props
+C:\Users\alena\Downloads\Xamarin\NueralNetrwork\obj\Debug\110\adb.props
+C:\Users\alena\Downloads\Xamarin\NueralNetrwork\obj\Debug\110\NueralNetrwork.csproj.AssemblyReference.cache

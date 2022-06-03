@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:68805089084:android:a1c9a99da9239482e2b039",
         "android_client_info": {
-          "package_name": "NueralNetrwork.csproj"
+          "package_name": "NueralNetrwork"
         }
       },
       "oauth_client": [
@@ -39,7 +39,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:68805089084:android:13ce2d0bc7dfa745e2b039",
         "android_client_info": {
-          "package_name": "NueralNetrwork.csproj"
+          "package_name": "NueralNetrwork"
         }
       },
       "oauth_client": [
@@ -68,7 +68,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:68805089084:android:12896a9f5df07a08e2b039",
         "android_client_info": {
-          "package_name": "com.umbrella.android"
+          "package_name": "NueralNetrwork"
         }
       },
       "oauth_client": [

@@ -1,69 +1,47 @@
-﻿/*using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NueralNetrwork.NetworkActivity;
+using NueralNetrwork.ui;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-
-
-namespace NueralNetrwork
+namespace NueralNetrwork 
 {
     [TestClass]
-    class TestUI
-    {
+   class TestUI
+   {
+       private MainPage mainpage;
+       private MainActivity mainact;
 
-        private Activity mActivity;
-        private RadioGroup mRadioGroup;
-    public static final ActivityTestRule<NetworkActivity> activityTestRule =
-            new ActivityTestRule<>(NetworkActivity.class);
-    public void setup()
-        {
-            mActivity = activityTestRule.getActivity();
-            mRadioGroup = (RadioGroup)mActivity.findViewById(R.id.radioButtonBackProp);
-        }
+       [TestMethod]
+     public void testLogin()
+      {
+           mainpage = new MainPage();
+
+       }
+
         [TestMethod]
-        public void validateEditText() throws IOException
+       public void testLabel()
         {
-            onView(withId(R.id.textView)).check(matches(isDisplayed()));
-    }
+           mainpage = new MainPage();
+          try
+           {
+              Assert.AreEqual("Login", mainpage.myLogTest);
+                Assert.AreEqual("Password", mainpage.myPasTest);
 
-    [TestMethod]
-    public void test_visibility()
-    {
-        Espresso.onView(ViewMatchers.withId(R.id.radioButtonBackProp))
-                .check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
-
-        Espresso.onView(ViewMatchers.withId(R.id.radioButtonIpprop))
-                .check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
-
-        Espresso.onView(ViewMatchers.withId(R.id.radioButtonRprop))
-                .check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
-
-        Espresso.onView(ViewMatchers.withId(R.id.textView))
-                .check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
-
-        Espresso.onView(ViewMatchers.withId(R.id.upload))
-                .check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
-
-    }
-    [TestMethod]
-    public void test_isVisibility()
-    {
-        onView(withId(R.id.radio))
-                .check(matches(isDisplayed()));
-
-        onView(withId(R.id.split_action_bar))
-                .check(matches(isDisplayed()));
-
-        onView(withId(R.id.textView))
-                .check(matches(isDisplayed()));
-
-    }
-}
-}*/
+             }
+            catch
+             {
+                 Assert.AreEqual("Логин", mainpage.myLogTest);
+                Assert.AreEqual("Пароль", mainpage.myPasTest);
+            }
+        }
+     }
+ }

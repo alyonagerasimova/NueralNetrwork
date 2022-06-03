@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/alena/Downloads/Xamarin7/Xamarin/NueralNetrwork/Resources/drawable/list_selector.xml" value="0.2578125" />
+        <entry key="..\:/Users/alena/Downloads/Xamarin7/Xamarin/NueralNetrwork/Resources/layout/activity_choose_image.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/alena/Downloads/Xamarin7/Xamarin/NueralNetrwork/Resources/layout/activity_images_upload.xml" value="0.2" />
+        <entry key="..\:/Users/alena/Downloads/Xamarin7/Xamarin/NueralNetrwork/Resources/layout/activity_maps.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/alena/Downloads/Xamarin7/Xamarin/NueralNetrwork/Resources/layout/activity_network.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/alena/Downloads/Xamarin7/Xamarin/NueralNetrwork/Resources/layout/list_images.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/alena/Downloads/Xamarin7/Xamarin/NueralNetrwork/Resources/layout/list_item_layout.xml" value="0.24166666666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="com.jetbrains.rider.android.RiderAndroidMiscFileCreationComponent">
+    <option name="ENSURE_MISC_FILE_EXISTS" value="true" />
+  </component>
+</project>

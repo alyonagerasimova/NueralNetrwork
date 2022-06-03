@@ -11,7 +11,7 @@ using System.Text;
 
 namespace NueralNetrwork.Network
 {
-    class Image
+    public class Image
     {
 
         private String imageName;

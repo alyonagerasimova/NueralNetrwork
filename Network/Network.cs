@@ -23,6 +23,12 @@ namespace NueralNetrwork.Network
         private static int numberCycles = 0;
         private static double learningRateFactor;
         private static double error = 0.0;
+
+        internal bool Equals(object network)
+        {
+            throw new NotImplementedException();
+        }
+
         private static int numberHiddenNeurons;
         private double[] pixelsValues;
         private String[] percent = new String[27];
@@ -93,7 +99,7 @@ namespace NueralNetrwork.Network
             }
             weights[0] = new double[inputValues.Length, hiddenValues.Length];
             weights[1] = new double[hiddenValues.Length,outputValues.Length];
-            for (int i = 0; i < weights.Length; i++)
+           /* for (int i = 0; i < weights.Length; i++)
             {
                 for (int j = 0; j < weights[i].Length; j++)
                 {
@@ -102,7 +108,7 @@ namespace NueralNetrwork.Network
                         weights[i] [j, k] = rnd.NextDouble() * 2 - 1;
                     }
                 }
-            }
+            }*/
         }
 
         public void setNameNetwork(String nameNetwork)

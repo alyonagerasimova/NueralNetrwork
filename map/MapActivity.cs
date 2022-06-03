@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Android;
 using Android.App;
@@ -10,18 +11,20 @@ using AndroidX.AppCompat.App;
 using Android.Gms.Common;
 using Android.Gms.Location;
 using Android.Util;
+using Xamarin.Essentials;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Platform.Android;
 
 namespace NueralNetrwork.map
 {
-    [Activity(Label = "Network", Theme = "@style/MainTheme",
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme",
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MapActivity : AppCompatActivity, IOnMapReadyCallback
     {
         const int RequestLocationId = 0;
         GoogleMap map;
         FusedLocationProviderClient fusedLocationProviderClient;
+        CancellationTokenSource cts;
 
         readonly string[] LocationPermissions =
         {
@@ -33,8 +36,7 @@ namespace NueralNetrwork.map
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_maps);
-
-            var mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
+            var mapFragment = (MapFragment) FragmentManager.FindFragmentById(Resource.Id.map);
             mapFragment.GetMapAsync(this);
             fusedLocationProviderClient = LocationServices.GetFusedLocationProviderClient(this);
 
@@ -63,16 +65,22 @@ namespace NueralNetrwork.map
         {
             map = googleMap;
             InitializeUiSettingsOnMap();
-            GetLastLocationFromDevice();
+            // GetLastLocationFromDevice();
 
-            LatLng location = new LatLng(50.897778, 3.013333);
-
+            LatLng location = new LatLng(53.2121, 50.1779);
+            
             MarkerOptions markerOpt1 = new MarkerOptions();
             markerOpt1.SetPosition(location);
-            markerOpt1.SetTitle("Vimy Ridge");
-            googleMap.AddMarker(markerOpt1);
+            map.AddMarker(markerOpt1);
+            CameraPosition.Builder builder = CameraPosition.InvokeBuilder();
+            builder.Target(location);
+            builder.Zoom(15);
+            CameraPosition cameraPosition = builder.Build();
+            CameraUpdate cameraUpdate = CameraUpdateFactory.NewCameraPosition(cameraPosition);
+            map.MoveCamera(cameraUpdate);
+            GetCurrentLocation();
         }
-        
+
         void InitializeUiSettingsOnMap()
         {
             map.UiSettings.MyLocationButtonEnabled = true;
@@ -80,7 +88,26 @@ namespace NueralNetrwork.map
             map.UiSettings.ZoomControlsEnabled = true;
             map.MyLocationEnabled = true;
         }
-        
+
+        async Task GetCurrentLocation()
+        {
+            try
+            {
+                var location = await Geolocation.GetLastKnownLocationAsync();
+                if (location != null)
+                {
+                    MarkerOptions markerOpt1 = new MarkerOptions();
+                    markerOpt1.SetPosition(new LatLng(location.Latitude, location.Longitude));
+                    map.AddMarker(markerOpt1);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
         async Task GetLastLocationFromDevice()
         {
             Android.Locations.Location location = await fusedLocationProviderClient.GetLastLocationAsync();
@@ -99,7 +126,7 @@ namespace NueralNetrwork.map
                 CameraPosition cameraPosition = builder.Build();
                 CameraUpdate cameraUpdate = CameraUpdateFactory.NewCameraPosition(cameraPosition);
                 map.MoveCamera(cameraUpdate);
-                Log.Debug("Sample", "The latitude is " + location.Latitude);
+                // Log.Debug("Sample", "The latitude is " + location.Latitude);
             }
         }
 

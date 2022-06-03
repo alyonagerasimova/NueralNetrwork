@@ -83,7 +83,6 @@
     <Compile Include="model\User.cs" />
     <Compile Include="NetworkActivity\ChooseImageActivity.cs" />
     <Compile Include="NetworkActivity\CustomAdapterImages.cs" />
-    <Compile Include="NetworkActivity\CustomAdapterNetwork.cs" />
     <Compile Include="NetworkActivity\getFlagAlgorithm.cs" />
     <Compile Include="NetworkActivity\ListImagesActivity.cs" />
     <Compile Include="NetworkActivity\MainActivity.cs" />
@@ -92,6 +91,7 @@
     <Compile Include="NetworkActivity\UploadActivity.cs" />
     <Compile Include="NetworkActivity\UploadNetworkActivity.cs" />
     <Compile Include="Network\Const.cs" />
+    <Compile Include="NetworkActivity\DeleteNetworkActivity.cs" />
     <Compile Include="Network\db\SaveNetwork.cs" />
     <Compile Include="Network\Image.cs" />
     <Compile Include="Network\impl\BackPropImpl.cs" />
@@ -108,16 +108,19 @@
     <Compile Include="TestBackend.cs" />
     <Compile Include="TestUI.cs" />
     <Compile Include="ui\LoggedInNetworkView.cs" />
+    <Compile Include="ui\MainPage.cs" />
     <Compile Include="ui\NetworkResult.cs" />
     <Compile Include="ui\NetworkViewModelFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
-    <None Include="Assets\AboutAssets.txt" />
+    <AndroidAsset Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\arabic_c.jpeg" />
     <AndroidResource Include="Resources\drawable\ic_add_24dp.xml" />
+    <AndroidResource Include="Resources\drawable\ic_baseline_add_photo_alternate_24.xml" />
     <AndroidResource Include="Resources\drawable\ic_baseline_arrow_back_24.xml" />
     <AndroidResource Include="Resources\drawable\ic_baseline_location_on_24.xml" />
     <AndroidResource Include="Resources\drawable\ic_dashboard_black_24dp.xml" />
@@ -138,6 +141,7 @@
     <AndroidResource Include="Resources\layout\activity_maps.xml" />
     <AndroidResource Include="Resources\layout\activity_network.xml" />
     <AndroidResource Include="Resources\layout\activity_upload_delete_network.xml" />
+    <AndroidResource Include="Resources\layout\activity_user.xml" />
     <AndroidResource Include="Resources\layout\activity__login_register.xml" />
     <AndroidResource Include="Resources\layout\activuty_upload.xml" />
     <AndroidResource Include="Resources\layout\bottom_activity.xml" />
@@ -167,13 +171,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="model\" />
-    <Folder Include="Resources\drawable\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="FirebaseDatabase.net">
-      <Version>4.0.7</Version>
-    </PackageReference>
     <PackageReference Include="Google.Cloud.Firestore">
       <Version>2.5.0</Version>
     </PackageReference>
@@ -202,17 +199,8 @@
     <PackageReference Include="Xamarin.AndroidX.Navigation.Runtime">
       <Version>2.3.5.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Firebase.Auth">
-      <Version>121.0.1.4</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Firebase.Common">
-      <Version>120.0.0.3</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Firebase.Core">
-      <Version>119.0.1.3</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Firebase.Database">
-      <Version>120.0.0.3</Version>
+    <PackageReference Include="Xamarin.Firebase.Components">
+      <Version>117.0.0.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.Maps">
       <Version>5.0.0.2401</Version>
@@ -228,6 +216,315 @@
     <PackageReference Include="Xamarin.GooglePlayServices.Tasks">
       <Version>117.2.1.3</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\A.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\A1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\B.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\B1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\C.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\C1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\D.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\D1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\E.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\E1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\F.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\F1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\G.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\G1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\H.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\H1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\I.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\I1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\J.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\J1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\K.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\K1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\L.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\L1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\M.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\M1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\N.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\N1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\O.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\O1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\P.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\P1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Q.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Q1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\R.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\R1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\S.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\S1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\T.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\T1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\U.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\U1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\V.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\V1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\W.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\W1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\X.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\X1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Y.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Y1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Z.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Z1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_u.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_v.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_y.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_z.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_i.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_j.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_q.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_r.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_u.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_v.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_y.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\arabic_z.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_i.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_j.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_q.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\printed_r.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

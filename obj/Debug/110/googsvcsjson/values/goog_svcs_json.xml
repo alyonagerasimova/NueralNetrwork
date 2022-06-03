@@ -1,7 +1,1 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <string name="gcm_defaultSenderId" translatable="false">68805089084</string>
-  <string name="firebase_database_url" translatable="false">https://mobile-app-347309-default-rtdb.firebaseio.com</string>
-  <string name="google_storage_bucket" translatable="false">mobile-app-347309.appspot.com</string>
-  <string name="project_id" translatable="false">mobile-app-347309</string>
-</resources>
+<resources><string name="gcm_defaultSenderId" translatable="false">68805089084</string><string name="firebase_database_url" translatable="false">https://mobile-app-347309-default-rtdb.firebaseio.com</string><string name="google_storage_bucket" translatable="false">mobile-app-347309.appspot.com</string><string name="project_id" translatable="false">mobile-app-347309</string></resources>

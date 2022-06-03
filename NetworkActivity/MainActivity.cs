@@ -1,20 +1,20 @@
-﻿// using Android.App;
-// using Android.Content.PM;
-// using Android.Database;
-// using Android.Database.Sqlite;
-// using Android.Graphics;
-// using Android.OS;
-// using Android.Widget;
-// using Android.Runtime;
-// using AndroidX.AppCompat.App;
-// using NueralNetrwork.Network.db;
-//
-// namespace NueralNetrwork.NetworkActivity
-// {
-//     [Activity(Label = "Network", Theme = "@style/MainTheme",
-//         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-//     public class MainActivity : AppCompatActivity
-//     {
+﻿using Android.App;
+using Android.Content.PM;
+using Android.Database;
+using Android.Database.Sqlite;
+using Android.Graphics;
+using Android.OS;
+using Android.Widget;
+using Android.Runtime;
+using AndroidX.AppCompat.App;
+using NueralNetrwork.Network.db;
+
+namespace NueralNetrwork.NetworkActivity
+{
+    [Activity(Label = "@string/app_name", Theme = "@style/MainTheme",
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    public class MainActivity : AppCompatActivity
+    {
 //         private ListView userList;
 //         private TextView header;
 //         private SaveNetwork databaseHelper;
@@ -37,7 +37,7 @@
 //         {
 //             base.OnResume();
 //             // открываем подключение
-//             db = databaseHelper.getReadableDatabase();
+//             db = databaseHelper;
 //
 //             //получаем данные из бд в виде курсора
 //             userCursor = db.RawQuery("select * from " + SaveNetwork.TABLE, null);
@@ -58,5 +58,5 @@
 //             userCursor.Close();
 //         }
 //
-//     }
-// }
+    }
+}

@@ -12,7 +12,7 @@ using System.Text;
 namespace NueralNetrwork.Network
 {
     class Validation
-    { 
+    {
 
         public static bool isNumberHiddenValid(String numberHidden)
         {

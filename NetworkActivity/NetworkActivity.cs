@@ -29,7 +29,7 @@ using NueralNetrwork.ui;
 
 namespace NueralNetrwork.NetworkActivity
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true,
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme",
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class NetworkActivity : AppCompatActivity, Android.Text.ITextWatcher
     {
@@ -163,15 +163,7 @@ namespace NueralNetrwork.NetworkActivity
                 imageForRecognize.SetImageDrawable(ListImagesActivity.getDrawableForTrain());
                 imageForRecognize.SetScaleType(ImageView.ScaleType.FitXy);
             }
-
-            if (numberHidden != null || learningRate != null || numberCycle != null || error != null)
-            {
-                numberHiddenEditText.SetText(Int32.Parse(numberHidden));
-                learningRateEditText.SetText(Int32.Parse(learningRate));
-                numberCycleEditText.SetText(Int32.Parse(numberCycle));
-                errorEditText.SetText(Int32.Parse(error));
-            }
-
+            
             ITextWatcher watcher = null;
             buttonUpload.Click += (o, e) =>
             {

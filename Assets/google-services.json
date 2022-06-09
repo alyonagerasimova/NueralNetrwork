@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "464681171428",
+    "project_id": "nueralnetrwork",
+    "storage_bucket": "nueralnetrwork.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464681171428:android:15157ecea7e89c49ce6ff1",
+        "android_client_info": {
+          "package_name": "NueralNetrwork.csproj"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464681171428-kd042aasghsbmdpkqho9pmo9essc7f22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmG_N9Kqeo25BQMbI-WY4hmWRXSZMWBNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464681171428-kd042aasghsbmdpkqho9pmo9essc7f22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
